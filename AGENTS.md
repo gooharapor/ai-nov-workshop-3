@@ -43,3 +43,9 @@ Setup storybook ด้วยวิธีของ Vite โดย follow ตา�
 
 และเพิ่ม `Payment.stories.js` สำหรับ specs ของ Payment Component 
 ```
+
+## 5. เพิ่ม convert vue component
+ให้ convert vue component จาก file นี้
+https://github.com/mikelopster/kbtg-ai-workshop-nov/blob/main/workshop-3/specs/components/Payment.vue
+
+import เข้ามาใน project react นี้ให้ถูกต้อง พร้อมเรียกใช้ที่หน้า App.jsx ด้วย
