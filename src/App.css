@@ -1,55 +1,334 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* App Container */
+.app-container {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  padding: 4rem 2rem;
   text-align: center;
+  color: white;
+}
+
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .logo-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
-.logo-container h1 {
+.hero-logo {
+  height: 3.5rem;
+  width: 3.5rem;
+  filter: brightness(0) invert(1);
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 1rem 0;
+  letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+  font-size: 1.125rem;
+  line-height: 1.75;
+  opacity: 0.95;
   margin: 0;
 }
 
-.logo {
-  height: 6em;
+/* Features Section */
+.features-section {
+  background-color: #f3f4f6;
+  padding: 4rem 2rem;
+  color: #1f2937;
+}
+
+.features-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.features-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  color: #111827;
+}
+
+.features-subtitle {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #6b7280;
+  margin: 0 0 3rem 0;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.feature-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.feature-icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  color: white;
+}
+
+.secure-icon {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.lightning-icon {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.mobile-icon {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.feature-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 0.75rem 0;
+  color: #111827;
+}
+
+.feature-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Interactive Demo Section */
+.demo-section {
+  background-color: #f9fafb;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.demo-content {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  padding: 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.demo-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0 0 1.5rem 0;
+  color: #111827;
+}
+
+.counter-button {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  border: none;
+  padding: 0.875rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.4);
+}
+
+.counter-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.4);
+}
+
+.demo-subtitle {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 1.5rem 0 0 0;
+}
+
+.demo-subtitle code {
+  background: #f3f4f6;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-family: "Monaco", "Courier New", monospace;
+  font-size: 0.85rem;
+  color: #059669;
+}
+
+/* Payment Section */
+.payment-section {
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+  padding: 4rem 2rem;
+  color: white;
+}
+
+.payment-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.payment-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+}
+
+.payment-subtitle {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #cbd5e1;
+  margin: 0 0 3rem 0;
+}
+
+.payment-footer {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #334155;
+}
+
+.footer-note {
+  font-size: 0.875rem;
+  color: #94a3b8;
+  margin: 0 0 1.5rem 0;
+}
+
+.footer-badges {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.badge {
+  background: #334155;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-size: 0.875rem;
+  color: #e2e8f0;
+}
+
+/* Footer */
+.app-footer {
+  background: #0f172a;
+  color: #cbd5e1;
+  padding: 3rem 2rem 1.5rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-section h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: white;
+  margin: 0 0 1rem 0;
+}
+
+.footer-section p {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: #94a3b8;
+  margin: 0;
+}
+
+.footer-section ul {
+  list-style: none;
   padding: 0;
-  will-change: filter;
-  transition: filter 300ms;
-  vertical-align: middle;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  margin: 0;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.footer-section li {
+  font-size: 0.875rem;
+  line-height: 2;
+  color: #94a3b8;
+}
+
+.footer-section a {
+  color: #10b981;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: #34d399;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid #1e293b;
+}
+
+.footer-bottom p {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .hero-subtitle {
+    font-size: 1rem;
   }
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  .features-title {
+    font-size: 1.75rem;
   }
-}
 
-.card {
-  padding: 2em;
-}
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
 
-.read-the-docs {
-  color: #888;
+  .payment-title {
+    font-size: 1.75rem;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
 }

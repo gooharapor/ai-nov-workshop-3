@@ -1,3 +1,21 @@
+## 0. ข้อกำหนดสำคัญ - Node.js Version
+
+**⚠️ คำสั่งบังคับ: โปรเจคนี้ต้องใช้ Node.js version 20.19.3 เท่านั้น**
+
+เมื่อต้องการรัน `pnpm run dev` หรือ `pnpm run build` ต้องใช้คำสั่งนี้เสมอ:
+
+```bash
+export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" && nvm use 20.19.3 && pnpm run dev
+```
+
+หรือสำหรับ build:
+
+```bash
+export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" && nvm use 20.19.3 && pnpm run build
+```
+
+**เหตุผล:** Vite 7.2.2 ต้องการ Node.js version 20.19+ หรือ 22.12+ เท่านั้น หากใช้ Node version ต่ำกว่า จะเกิด error `crypto.hash is not a function`
+
 ## 1. Setup project
 
 - setup React project + tailwind ผ่าน AI (โดยใช้ url กำกับ)
@@ -41,10 +59,11 @@ Setup tailwind ด้วยวิธีของ Vite + Tailwind (tab: Using Vit
 ```
 Setup storybook ด้วยวิธีของ Vite โดย follow ตาม Document url นี้ https://storybook.js.org/docs/get-started/frameworks/react-vite (โปรดอ่าน url ด้วย)
 
-และเพิ่ม `Payment.stories.js` สำหรับ specs ของ Payment Component 
+และเพิ่ม `Payment.stories.js` สำหรับ specs ของ Payment Component
 ```
 
 ## 5. เพิ่ม convert vue component
+
 ให้ convert vue component จาก file นี้
 https://github.com/mikelopster/kbtg-ai-workshop-nov/blob/main/workshop-3/specs/components/Payment.vue
 

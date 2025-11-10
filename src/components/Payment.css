@@ -1,0 +1,251 @@
+/* Payment Form Container */
+.payment-form-container {
+  max-width: 500px;
+  margin: 0 auto;
+  background: #1e293b;
+  border-radius: 0.75rem;
+  padding: 2rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+.payment-form {
+  width: 100%;
+}
+
+/* Form Header */
+.form-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.form-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 0.5rem 0;
+}
+
+.form-subtitle {
+  font-size: 0.875rem;
+  color: #94a3b8;
+  margin: 0;
+}
+
+/* Form Groups */
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #e2e8f0;
+  margin-bottom: 0.5rem;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  background-color: #334155;
+  border: 1px solid #475569;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.9375rem;
+  color: #f1f5f9;
+  transition: all 0.2s ease;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: #64748b;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  background-color: #3d4f66;
+}
+
+.form-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2394a3b8' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+
+.form-textarea {
+  resize: none;
+  min-height: 100px;
+  font-family: inherit;
+}
+
+/* Form Rows */
+.form-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.form-group-large {
+  flex: 2;
+}
+
+.form-group-small {
+  flex: 1;
+}
+
+.form-row-equal {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-hint {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin: 0.5rem 0 1.25rem 0;
+}
+
+/* Form Section */
+.form-section {
+  margin-bottom: 1.5rem;
+  padding-top: 0.5rem;
+}
+
+.section-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #f1f5f9;
+  margin: 0 0 0.5rem 0;
+}
+
+.section-subtitle {
+  font-size: 0.8125rem;
+  color: #94a3b8;
+  margin: 0 0 1rem 0;
+  line-height: 1.5;
+}
+
+/* Checkbox */
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.form-checkbox {
+  width: 1.125rem;
+  height: 1.125rem;
+  border-radius: 0.25rem;
+  border: 2px solid #475569;
+  background-color: #334155;
+  cursor: pointer;
+  appearance: none;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.form-checkbox:checked {
+  background-color: #3b82f6;
+  border-color: #3b82f6;
+}
+
+.form-checkbox:checked::after {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 0px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.form-checkbox:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.checkbox-label {
+  font-size: 0.875rem;
+  color: #e2e8f0;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Form Actions */
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btn-submit,
+.btn-cancel {
+  flex: 1;
+  padding: 0.875rem 1.5rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-submit {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.btn-submit:hover {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
+}
+
+.btn-submit:active {
+  transform: translateY(0);
+}
+
+.btn-cancel {
+  background-color: #475569;
+  color: #e2e8f0;
+}
+
+.btn-cancel:hover {
+  background-color: #5a6a7f;
+}
+
+.btn-cancel:active {
+  background-color: #3d4a5c;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .payment-form-container {
+    padding: 1.5rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .btn-submit,
+  .btn-cancel {
+    width: 100%;
+  }
+}

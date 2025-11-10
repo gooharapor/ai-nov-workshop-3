@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./Payment.css";
 
 function Payment() {
   const [formData, setFormData] = useState({
@@ -29,70 +30,66 @@ function Payment() {
   };
 
   return (
-    <div className="bg-black text-white p-8 rounded-lg max-w-md mx-auto">
-      <form onSubmit={handleSubmit}>
+    <div className="payment-form-container">
+      <form onSubmit={handleSubmit} className="payment-form">
         {/* Header */}
-        <div className="mb-8">
-          <h2 className="text-xl font-semibold mb-2">Payment Method</h2>
-          <p className="text-gray-400 text-sm">
+        <div className="form-header">
+          <h2 className="form-title">Payment Method</h2>
+          <p className="form-subtitle">
             All transactions are secure and encrypted
           </p>
         </div>
 
         {/* Name on Card */}
-        <div className="mb-6">
-          <label className="block text-sm font-medium mb-2">Name on Card</label>
+        <div className="form-group">
+          <label className="form-label">Name on Card</label>
           <input
             type="text"
             name="nameOnCard"
             value={formData.nameOnCard}
             onChange={handleChange}
-            className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-blue-500 focus:outline-none"
+            className="form-input"
             placeholder="John Doe"
           />
         </div>
 
         {/* Card Number and CVV */}
-        <div className="grid grid-cols-3 gap-4 mb-4">
-          <div className="col-span-2">
-            <label className="block text-sm font-medium mb-2">
-              Card Number
-            </label>
+        <div className="form-row">
+          <div className="form-group-large">
+            <label className="form-label">Card Number</label>
             <input
               type="text"
               name="cardNumber"
               value={formData.cardNumber}
               onChange={handleChange}
-              className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-blue-500 focus:outline-none"
+              className="form-input"
               placeholder="1234 5678 9012 3456"
             />
           </div>
-          <div>
-            <label className="block text-sm font-medium mb-2">CVV</label>
+          <div className="form-group-small">
+            <label className="form-label">CVV</label>
             <input
               type="text"
               name="cvv"
               value={formData.cvv}
               onChange={handleChange}
-              className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-blue-500 focus:outline-none"
+              className="form-input"
               placeholder="123"
               maxLength="3"
             />
           </div>
         </div>
-        <p className="text-gray-400 text-xs mb-6">
-          Enter your 16-digit number.
-        </p>
+        <p className="form-hint">Enter your 16-digit number.</p>
 
         {/* Month and Year */}
-        <div className="grid grid-cols-2 gap-4 mb-8">
-          <div>
-            <label className="block text-sm font-medium mb-2">Month</label>
+        <div className="form-row-equal">
+          <div className="form-group">
+            <label className="form-label">Month</label>
             <select
               name="month"
               value={formData.month}
               onChange={handleChange}
-              className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-blue-500 focus:outline-none appearance-none"
+              className="form-select"
             >
               <option value="MM">MM</option>
               <option value="01">01</option>
@@ -109,13 +106,13 @@ function Payment() {
               <option value="12">12</option>
             </select>
           </div>
-          <div>
-            <label className="block text-sm font-medium mb-2">Year</label>
+          <div className="form-group">
+            <label className="form-label">Year</label>
             <select
               name="year"
               value={formData.year}
               onChange={handleChange}
-              className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-blue-500 focus:outline-none appearance-none"
+              className="form-select"
             >
               <option value="YYYY">YYYY</option>
               <option value="2024">2024</option>
@@ -129,49 +126,45 @@ function Payment() {
         </div>
 
         {/* Billing Address */}
-        <div className="mb-6">
-          <h3 className="text-lg font-medium mb-2">Billing Address</h3>
-          <p className="text-gray-400 text-sm mb-4">
+        <div className="form-section">
+          <h3 className="section-title">Billing Address</h3>
+          <p className="section-subtitle">
             The billing address associated with your payment method
           </p>
-          <div className="flex items-center">
+          <div className="checkbox-group">
             <input
               type="checkbox"
+              id="sameAsShipping"
               name="sameAsShipping"
               checked={formData.sameAsShipping}
               onChange={handleChange}
-              className="w-4 h-4 bg-blue-600 border-blue-600 rounded focus:ring-blue-500 focus:ring-2"
+              className="form-checkbox"
             />
-            <label className="ml-2 text-sm">Same as shipping address</label>
+            <label htmlFor="sameAsShipping" className="checkbox-label">
+              Same as shipping address
+            </label>
           </div>
         </div>
 
         {/* Comments */}
-        <div className="mb-8">
-          <label className="block text-sm font-medium mb-2">Comments</label>
+        <div className="form-group">
+          <label className="form-label">Comments</label>
           <textarea
             name="comments"
             value={formData.comments}
             onChange={handleChange}
             rows="4"
-            className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-blue-500 focus:outline-none resize-none"
+            className="form-textarea"
             placeholder="Add any additional comments"
           />
         </div>
 
         {/* Buttons */}
-        <div className="flex gap-4">
-          <button
-            type="submit"
-            className="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors"
-          >
+        <div className="form-actions">
+          <button type="submit" className="btn-submit">
             Submit
           </button>
-          <button
-            type="button"
-            onClick={handleCancel}
-            className="flex-1 bg-gray-700 hover:bg-gray-600 text-white font-medium py-3 px-6 rounded-lg transition-colors"
-          >
+          <button type="button" onClick={handleCancel} className="btn-cancel">
             Cancel
           </button>
         </div>
